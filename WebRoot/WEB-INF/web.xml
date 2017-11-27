@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name></display-name>
+  <servlet>
+    <servlet-name>WeixinServlet</servlet-name>
+    <servlet-class>web.servlet.WeixinServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SignUtil</servlet-name>
+    <servlet-class>web.util.SignUtil</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>WeiXinServlet</servlet-name>
+  	<servlet-class>com.ego.ext.weixin.WeiXinServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>InitServlet</servlet-name>
+    <servlet-class>web.servlet.InitServlet</servlet-class>
+    
+    <!-- 配置获取access_token所需要参数appid和appsecret -->
+    <init-param>
+    	<param-name>appid</param-name>
+    	<param-value>appsecret</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>appsecret</param-name>
+    	<param-value>appsecret</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>OAuthServlet</servlet-name>
+    <servlet-class>web.servlet.OAuthServlet</servlet-class>
+  </servlet>
+
+
+  
+  
+  
+  <servlet-mapping>
+    <servlet-name>WeixinServlet</servlet-name>
+    <url-pattern>/wx.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SignUtil</servlet-name>
+    <url-pattern>/SignUtil</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>WeiXinServlet</servlet-name>
+  	<url-pattern>/WeiXinServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InitServlet</servlet-name>
+    <url-pattern>/InitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OAuthServlet</servlet-name>
+    <url-pattern>/OAuthServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
